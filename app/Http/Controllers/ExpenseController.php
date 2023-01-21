@@ -145,7 +145,9 @@ class ExpenseController extends Controller
      * @param  \App\Models\Expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Expense $expense)
+   
+   
+     public function destroy(Expense $expense)
     {
         $user = auth()->user();
 
@@ -154,6 +156,7 @@ class ExpenseController extends Controller
         }
 
         $expense->delete();
+
 
         return redirect('/dashboard')->with('success', 'Despesa removida com sucesso');
     }
